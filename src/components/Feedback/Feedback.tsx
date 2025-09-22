@@ -10,8 +10,8 @@ import {
 } from "./styles";
 
 function Feedback() {
-const dispatch = useAppDispatch();
-const { like, dislike } = useAppSelector(feedbackSliceSelectors.feedback);
+  const dispatch = useAppDispatch();
+  const { like, dislike } = useAppSelector(feedbackSliceSelectors.feedback);
 
   const onLike = () => dispatch(feedbackSlice.actions.plusLike());
   const onDislike = () => dispatch(feedbackSlice.actions.plusDislike());
