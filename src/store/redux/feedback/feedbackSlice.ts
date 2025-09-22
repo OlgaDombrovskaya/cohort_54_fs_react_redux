@@ -20,20 +20,18 @@ export const feedbackSlice = createAppSlice({
         plusDislike: create.reducer((state: FeedbackSliceState) => {
             state.dislike += 1
         }),
-        reset: create.reducer(
-            (state: FeedbackSliceState) => {
-                state.like = 0;
-                state.dislike = 0;
-            }),
+        // reset: create.reducer(
+        // (state: FeedbackSliceState) => {
+        //     state.like = 0;
+        //     state.dislike = 0;
+        // }),
+        reset: create.reducer(() => feedbackInitialState),
     }),
 
     // подписка на хранилище в store
     selectors: {
         feedback: (state: FeedbackSliceState) => {
-            return {
-                like: state.like,
-                dislike: state.dislike,
-            }
+            return state
         }
     },
 });
